@@ -1,0 +1,42 @@
+<html>
+    <head>
+	<title>Hello, Rails!</title>
+    </head>
+    <body>
+	<h1>Hello from Rails!</h1>
+	<ul>
+	    <li>Addition: <%= 1+2 %></li>
+	    <li>Concatenation: <%= "cow" + "boy" %></li>
+	    <li>Time in one hour: <%= 1.hour.from_now %></li>
+	</ul>
+	<% 3.times do -%>
+	Ho !<br />
+	<% end -%>
+	Merry Christmas!
+	<br/><br/>
+	<% 3.downto(1) do |count| -%>
+	<%= count %>...<br/>
+	<% end -%>
+	Lift off!
+	<br/><br/>
+	Email: <%= h("Ann & Bill <itskewpie@gmail.com>") %>
+	<p>
+	    It is now <%= Time.now %><br/>
+	    It is now <%= @time %>
+	</p>
+	<p>
+	    Say <a href="/say/goodbye">Goodbye</a>!
+	</p>
+	<% 3.times do %>
+	<p>
+	    Time to say
+	    <%= link_to "Goodbye!", :action => "goodbye" %>
+	</p>
+	<% end %>
+	<ul>
+	<% for file in @files %>
+	    <li><%= file %></li>
+	<% end %>
+	</ul>
+    </body>
+</html>
